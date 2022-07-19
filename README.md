@@ -2,6 +2,7 @@
 
 # Project name
 - Shade
+- <img src="https://ibb.co/mTb7RmD">
 
 
 ## 프로잭트 소개
