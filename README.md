@@ -2,7 +2,7 @@
 
 # Project name
 - Shade
-- <img src="https://ifh.cc/v-OyC6tR">
+- <img src="[https://ifh.cc/v-OyC6tR](https://ifh.cc/g/q2QM69.png)">
 
 
 ## 프로잭트 소개
