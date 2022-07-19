@@ -180,7 +180,7 @@
               <input
                 class="form-control input"
                 type="text"
-                placeholder="Explore Vuexy..."
+                placeholder="무엇을 찾으시나요?"
                 tabindex="-1"
                 data-search="search"
               />
@@ -323,7 +323,22 @@
                         <div class="mb-1 mb-sm-0">
                           <h2 class="fw-bolder mb-25">날짜별 피해 등록 현황</h2>
                           
-                          
+                          <!--Bar Chart Start -->
+                        <div class="col-xl-6 col-12">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-sm-center align-items-start flex-sm-row flex-column">
+                                    
+                                    <div class="header-right d-flex align-items-center mt-sm-0 mt-1">
+                                        <i data-feather="calendar"></i>
+                                        <input type="date" class="form-control flat-picker border-0 shadow-none bg-transparent pe-0" placeholder="YYYY-MM-DD" />
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <canvas class="bar-chart-ex chartjs" data-height="400"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Bar Chart End -->
                         </div>
                         <button type="button" class="btn btn-primary">
                           View Details
@@ -359,19 +374,34 @@
                 <div class="card invoice-list-wrapper">
                   <div class="card-datatable table-responsive">
                     <div class="mb-1 mb-sm-0">
-                          <h2 class="fw-bolder mb-25">최근 검거 조회</h2>
+                       <div class="card-header border-bottom">
+                                    <h2 class="fw-bolder mb-25" class="card-title">개별 피해 등록 목록</h2>
+                        </div>
                     </div>
                     <table class="table">
                       <thead>
                         <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">First</th>
-                          <th scope="col">Last</th>
-                          <th scope="col">Handle</th>
+                          <th >일시</th>
+                          <th>용의자 이름</th>
+                          <th>사이트명</th>
+                          <th>거래 유형</th>
+                          <th>피해 금액</th>
                         </tr>
                       </thead>
                       <tbody>
-                        
+                        <tr>
+                          <td id="trans_date">홍길동</td>
+                           <td id="yong_name"> 홍길동</td>
+                                                            <td id="trans_site">
+                                                              홍길동
+                                                            </td>
+                                                            <td id="trans_way">
+                                                              홍길동
+                                                            </td>
+                                                            <td id="trans_money">
+                                                              홍길동
+                                                            </td>
+                        </tr>
                       </tbody>
                     </table>
                   </div>
@@ -415,7 +445,16 @@
                                                           </tr>
                                                         </thead>
                                                         <tbody>
-                                                          
+                                                          <tr>
+                                                             <td id="trans_date">홍길동</td>
+                                                            <td id="yong_name"> 홍길동</td>
+                                                            <td id="case_num">
+                                                              홍길동
+                                                            </td>
+                                                            <td id="guilt_sit">
+                                                              홍길동
+                                                            </td>
+                                                          </tr>
                                                         </tbody>
                                                       </table>
                                                 </div>
@@ -463,7 +502,16 @@
                                                           </tr>
                                                         </thead>
                                                         <tbody>
-                                                          
+                                                          <tr>
+                                                            <td id="trans_date">홍길동</td>
+                                                            <td id="yong_name"> 홍길동</td>
+                                                            <td id="trans_money">
+                                                              홍길동
+                                                            </td>
+                                                            <td id="trans_site">
+                                                              홍길동
+                                                            </td>
+                                                          </tr>
                                                         </tbody>
                                                       </table>
                                                 </div>
