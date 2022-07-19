@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="loading" lang="ko" data-textdirection="ltr">
   <!-- BEGIN: Head-->
+
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,16 +18,20 @@
       content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app"
     />
     <meta name="author" content="PIXINVENT" />
-    <title >사기피해 접수</title>
+    <title> 사기 피해 접수</title>
     <link
       rel="apple-touch-icon"
       href="../../../app-assets/images/ico/apple-icon-120.png"
     />
+    
+   <!-- BEGIN : tab logo -->
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="../../../app-assets/images/ico/favicon.ico"
+      href="../app-assets/images/main_logo.png"
     />
+    <!-- END : tab logo -->
+
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
       rel="stylesheet"
@@ -38,50 +43,65 @@
       type="text/css"
       href="../../../app-assets/vendors/css/vendors.min.css"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../../app-assets/vendors/css/forms/select/select2.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../../app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css"
+    />
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
     <link
       rel="stylesheet"
       type="text/css"
-      href="../../../app-assets/css/bootstrap.min.css"
+      href="../../../app-assets/css/bootstrap.css"
     />
     <link
       rel="stylesheet"
       type="text/css"
-      href="../../../app-assets/css/bootstrap-extended.min.css"
+      href="../../../app-assets/css/bootstrap-extended.css"
     />
     <link
       rel="stylesheet"
       type="text/css"
-      href="../../../app-assets/css/colors.min.css"
+      href="../../../app-assets/css/colors.css"
     />
     <link
       rel="stylesheet"
       type="text/css"
-      href="../../../app-assets/css/components.min.css"
+      href="../../../app-assets/css/components.css"
     />
     <link
       rel="stylesheet"
       type="text/css"
-      href="../../../app-assets/css/themes/dark-layout.min.css"
+      href="../../../app-assets/css/themes/dark-layout.css"
     />
     <link
       rel="stylesheet"
       type="text/css"
-      href="../../../app-assets/css/themes/bordered-layout.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../../app-assets/css/themes/semi-dark-layout.min.css"
+      href="../../../app-assets/css/themes/semi-dark-layout.css"
     />
 
     <!-- BEGIN: Page CSS-->
     <link
       rel="stylesheet"
       type="text/css"
-      href="../../../app-assets/css/core/menu/menu-types/horizontal-menu.min.css"
+      href="../../../app-assets/css/core/menu/menu-types/horizontal-menu.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../../app-assets/css/plugins/forms/form-validation.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../../app-assets/css/plugins/forms/pickers/form-flat-pickr.css"
     />
     <!-- END: Page CSS-->
 
@@ -93,16 +113,22 @@
     />
 
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-    * {
-      font-family: 'Noto Sans KR', sans-serif;
-    }
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+      * {
+        font-family: "Noto Sans KR", sans-serif;
+      }
+
+      .font-center {
+        text-align: center;
+      }
     </style>
     <!-- END: Custom CSS-->
   </head>
   <!-- END: Head-->
 
   <!-- BEGIN: Body-->
+
   <body
     class="horizontal-layout horizontal-menu navbar-floating footer-static"
     data-open="hover"
@@ -119,44 +145,31 @@
           <li class="nav-item">
             <a
               class="navbar-brand"
-              href="../../../html/ltr/horizontal-menu-template/index.html"
+              href="home.html"
               >
-              <h2 class="brand-text mb-0">Shade</h2></a
-            >
+              <h2 class="brand-text mb-0" style="font-size: 30px;">Shade</h2>
+            </a>
           </li>
         </ul>
       </div>
       <div class="navbar-container d-flex content">
+        <div class="bookmark-wrapper d-flex align-items-center">
+          <ul class="nav navbar-nav d-xl-none">
+            <li class="nav-item">
+              <a class="nav-link menu-toggle" href="#"
+                ><i class="ficon" data-feather="menu"></i
+              ></a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav">
+            <li class="nav-item d-none d-lg-block">
+              <a class="nav-link nav-link-style"
+                ><i class="ficon" data-feather="moon"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
         <ul class="nav navbar-nav align-items-center ms-auto">
-          
-          <!-- Moon -->
-          <li class="nav-item d-none d-lg-block">
-            <a class="nav-link nav-link-style"
-              ><i class="ficon" data-feather="moon"></i
-            ></a>
-          </li>
-
-          <!-- Search -->
-          <li class="nav-item nav-search">
-            <a class="nav-link nav-link-search"
-              ><i class="ficon" data-feather="search"></i
-            ></a>
-            <div class="search-input">
-              <div class="search-input-icon"><i data-feather="search"></i></div>
-              <input
-                class="form-control input"
-                type="text"
-                placeholder="Explore Vuexy..."
-                tabindex="-1"
-                data-search="search"
-              />
-              <div class="search-input-close"><i data-feather="x"></i></div>
-              <ul class="search-list search-list-main"></ul>
-            </div>
-          </li>
-
-
-          <!-- User -->
           <li class="nav-item dropdown dropdown-user">
             <a
               class="nav-link dropdown-toggle dropdown-user-link"
@@ -167,181 +180,343 @@
               aria-expanded="false"
             >
               <div class="user-nav d-sm-flex d-none">
-                <span class="user-name fw-bolder">John Doe</span
+                <span class="user-name fw-bolder">User</span
                 ><span class="user-status">Admin</span>
               </div>
               <span class="avatar"
                 ><img
                   class="round"
-                  src="../../../app-assets//images/portrait/small/avatar-s-11.jpg"
+                  src=""
                   alt="avatar"
                   height="40"
-                  width="40" /><span class="avatar-status-online"></span></span
-            ></a>
-
-            <!-- BEGIN: Main Menu-->
-            <div class="horizontal-menu-wrapper">
-              <div
-                class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-shadow menu-border container-xxl"
-                role="navigation"
-                data-menu="menu-wrapper"
-                data-menu-type="floating-nav"
+                  width="40" />
+                  </span>
+            </a>
+            <div
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="dropdown-user"
+            >
+              <a class="dropdown-item" href="#"
+                ><i class="me-50" data-feather="user"></i> Profile</a
               >
-                
-                <!-- Horizontal menu content-->
-                <div
-                  class="navbar-container main-menu-content"
-                  data-menu="menu-container"
-                >
-                  <!-- include ../../../includes/mixins-->
-                  <ul
-                    class="nav navbar-nav"
-                    id="main-menu-navigation"
-                    data-menu="menu-navigation"
-                  >       
-                  <!-- 사기 피해 접수 -->
-                    <li class="dropdown nav-item" data-menu="dropdown">
-                      <a
-                        class="dropdown-toggle nav-link d-flex align-items-center"
-                        href="#"
-                        data-bs-toggle="dropdown"
-                        ><i data-feather="edit"></i
-                        ><span data-i18n="Forms &amp; Tables" >사기 피해 접수</span></a>
-                    </li>
-                    <!-- 용의자 분석 정보 -->
-                    <li class="dropdown nav-item" data-menu="dropdown">
-                      <a
-                        class="dropdown-toggle nav-link d-flex align-items-center"
-                        href="#"
-                        data-bs-toggle="dropdown"
-                        ><i data-feather="bar-chart-2"></i
-                        ><span data-i18n="Charts &amp; Maps" >용의자 분석 정보</span></a
-                      >
-                      
-                    </li>
-                    
-                    <!-- 개별 피해 목록 -->
-                    <li class="dropdown nav-item" data-menu="dropdown">
-                      <a
-                        class="dropdown-toggle nav-link d-flex align-items-center"
-                        href="#"
-                        data-bs-toggle="dropdown"
-                        >
-                        <i data-feather="box"></i><span data-i18n="Misc" >개별 피해 목록</span></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#"
+                ><i class="me-50" data-feather="settings"></i> Settings</a
+              >
+              <a class="dropdown-item" href="#"
+                ><i class="me-50" data-feather="help-circle"></i> FAQ</a
+              ><a class="dropdown-item" href="#"
+                ><i class="me-50" data-feather="power"></i> Logout</a
+              >
             </div>
-            <!-- END: Main Menu-->
           </li>
         </ul>
       </div>
     </nav>
-    </ul>
-    <!-- END: Header -->
+    <!-- END: Header-->
 
-  
+    <!-- BEGIN: Main Menu-->
+    <div class="horizontal-menu-wrapper">
+      <div
+        class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-shadow menu-border container-xxl"
+        role="navigation"
+        data-menu="menu-wrapper"
+        data-menu-type="floating-nav"
+      >
+        <div class="navbar-header">
+          <ul class="nav navbar-nav flex-row">
+            <li class="nav-item nav-toggle">
+              <a
+                class="nav-link modern-nav-toggle pe-0"
+                data-bs-toggle="collapse"
+                ><i
+                  class="d-block d-xl-none text-primary toggle-icon font-medium-4"
+                  data-feather="x"
+                ></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div class="shadow-bottom"></div>
+        <!-- Horizontal menu content-->
+        <div
+          class="navbar-container main-menu-content"
+          data-menu="menu-container"
+        >
+          <!-- include ../../../includes/mixins-->
+          <ul
+            class="nav navbar-nav"
+            id="main-menu-navigation"
+            data-menu="menu-navigation"
+          >
+            <li class="nav-item active">
+              <a class="nav-link d-flex align-items-center" href="register.html">
+                <i data-feather="edit"></i>
+                <span data-i18n="Home">사기 피해 접수</span>
+                </a>
+            </li>
 
+             <li class="nav-item">
+              <a class="nav-link d-flex align-items-center" href="analysis.html">
+                <i data-feather="bar-chart-2"></i>
+                <span data-i18n="Home">용의자 분석 정보</span>
+                </a>
+            </li>
+
+             <li class="nav-item">
+              <a class="nav-link d-flex align-items-center" href="Personal_List.html">
+                <i data-feather="list"></i>
+                <span data-i18n="Home">개별 피해 목록</span>
+                </a>
+            </li>
+                        
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- END: Main Menu-->
+
+    <!-- BEGIN: Content-->
     <div class="app-content content">
       <div class="content-overlay"></div>
       <div class="header-navbar-shadow"></div>
-    <div class="col-md-6">
-                    <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">등록자 정보</h4>
-                    </div>
-                    <div class="card-body">
-                        <label class="form-label" for="basic-default-password"
-                        >Password</label
-                        >
-                        <div class="input-group form-password-toggle mb-2">
-                        <input
-                            type="password"
-                            class="form-control"
-                            id="basic-default-password"
-                            placeholder="Your Password"
-                            aria-describedby="basic-default-password"
-                        />
-                        <span class="input-group-text cursor-pointer"
-                            ><i data-feather="eye"></i
-                        ></span>
-                        </div>
-
-                        <div class="input-group mb-2">
-                        <span class="input-group-text" id="basic-addon1">@</span>
-                        <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Username"
-                            aria-label="Username"
-                            aria-describedby="basic-addon1"
-                        />
-                        </div>
-
-                        <div class="input-group mb-2">
-                        <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Recipient's username"
-                            aria-label="Recipient's username"
-                            aria-describedby="basic-addon2"
-                        />
-                        <span class="input-group-text" id="basic-addon2"
-                            >@example.com</span
-                        >
-                        </div>
-
-                        <div class="input-group mb-2">
-                        <span class="input-group-text" id="basic-addon3"
-                            >https://example.com/users/</span
-                        >
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="basic-url3"
-                            aria-describedby="basic-addon3"
-                        />
-                        </div>
-
-                        <div class="input-group mb-2">
-                        <span class="input-group-text">$</span>
-                        <input
-                            type="text"
-                            class="form-control"
-                            placeholder="100"
-                            aria-label="Amount (to the nearest dollar)"
-                        />
-                        <span class="input-group-text">.00</span>
-                        </div>
-
-                        <div class="input-group">
-                        <span class="input-group-text">With textarea</span>
-                        <textarea
-                            class="form-control"
-                            aria-label="With textarea"
-                        ></textarea>
-                        </div>
-                    </div>
-                    </div>
+      <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+          <div class="content-header-left col-md-9 col-12 mb-2">
+            <div class="row breadcrumbs-top">
+              <div class="col-12">
+                <h2 class="content-header-title float-start mb-0">피해 접수</h2>
+                <div class="breadcrumb-wrapper">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a href="home.html">Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">Register</li>
+                  </ol>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="content-header-right text-md-end col-md-3 col-12 d-md-block d-none"
+          >
+            <div class="mb-1 breadcrumb-right">
+              <div class="dropdown">
+                <button
+                  class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i data-feather="grid"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end">
+                  <a class="dropdown-item" href="#"
+                    ><i class="me-1" data-feather="check-square"></i
+                    ><span class="align-middle">Todo</span></a
+                  ><a class="dropdown-item" href="#"
+                    ><i class="me-1" data-feather="message-square"></i
+                    ><span class="align-middle">Chat</span></a
+                  ><a class="dropdown-item" href="#"
+                    ><i class="me-1" data-feather="mail"></i
+                    ><span class="align-middle">Email</span></a
+                  ><a class="dropdown-item" href="#"
+                    ><i class="me-1" data-feather="calendar"></i
+                    ><span class="align-middle">Calendar</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+          <!-- Page layout -->
+                <div class="card" >
+                         <!-- BEGIN: Content-->
+      <div class="content-overlay"></div>
+      <div class="header-navbar-shadow"></div>
+      <div class="content-wrapper container-xxl p-0">
+        <div class="content-body">
+          <section id="input-group-basic">
+            <div class="row">
+          <div class="content-body">
+          <section id="input-group-basic">
+            <div class="card" style="align-items: center;">
+                  <div class="col-md-6 col-12">
+                            <div class="card" style="padding-top: 30px;">
+                                <div class="card-header">
+                                    <h4 class="card-title">등록자 정보</h4>
+                                </div>
+                                <div class="card-body">
+                                    <form class="needs-validation" novalidate>
+                                        <div class="mb-1">
+                                            <label class="form-label" for="basic-addon-name">이름</label>
+                                            <input type="text" id="basic-addon-name" class="form-control" placeholder="이름" aria-label="이름" aria-describedby="basic-addon-name" required />
+                                            <div class="invalid-feedback">이름을 입력해주세요.</div>
+                                        </div>
+                                        <div class="mb-1">
+                                            <label class="form-label" for="basic-default-email1">전화번호</label>
+                                            <input type="email" id="basic-default-email1" class="form-control" placeholder="01012345678" aria-label="01012345678" required />
+                                            <div class="invalid-feedback">전화번호를 입력해주세요.</div>
+                                        </div>
+                                
+
+                                    <div><div class="dropdown-divider"></div></div>
+                                
+                                <div class="card-header">
+                                    <h4 class="card-title">거래 사이트 / 품목 정보</h4>
+                                </div>
+
+                                        <div class="mb-1">
+                                            <label class="form-label" for="basic-default-password1">사이트명</label>
+                                            <input type="text" id="basic-default-password1" class="form-control" placeholder="ex. 중고나라" required />
+                                            <div class="invalid-feedback">사이트명을 입력해주세요.</div>
+                                        </div>
+                                        <div class="mb-1">
+                                            <label class="form-label" for="select-country1">거래 유형</label>
+                                            <select class="form-select" id="select-country1" required>
+                                                <option value="">거래 유형을 선택해주세요.</option>
+                                                <option value="직거래">직거래</option>
+                                                <option value="게임/비실물">게임 / 비실물</option>
+                                                <option value="상태/배송">상태 / 배송</option>
+                                                <option value="암호화폐">암호 화폐</option>
+                                            </select>
+                                            <div class="invalid-feedback">거래 유형을 선택해주세요.</div>
+                                        </div>
+                                        <div class="mb-1">
+                                            <label class="form-label" for="bsDob">물품명</label>
+                                            <input type="text" class="form-control picker" name="objname" id="bsDob" required />
+                                            <div class="invalid-feedback">물품 이름을 입력해주세요.</div>
+                                        </div>
+                                        <div class="mb-1">
+                                            <label class="form-label" for="bsDob">게시물 링크</label>
+                                            <input type="url" class="form-control picker" name="objname" id="bsDob" placeholder="https://www" />
+                                        </div>
+
+                                                <div class="dropdown-divider"></div>
+
+                                        <div class="card-header">
+                                          <h4 h4 class="card-title">용의자 정보</h4>
+                                       </div>
+
+                                       <div class="mb-1">
+                                            <label class="form-label" for="bsDob">용의자 아이디</label>
+                                            <input type="text" class="form-control picker" name="id" id="bsDob" required placeholder="shadeprotect"/>
+                                            <div class="invalid-feedback">용의자 아이디를 입력해주세요.</div>
+                                        </div>
+                                        <div class="mb-1">
+                                            <label class="form-label" for="bsDob">계좌 번호</label>
+                                            <input type="number" class="form-control picker" name="objname" id="bsDob" required />
+                                            <div class="invalid-feedback">용의자 계좌 번호을 입력해주세요.</div>
+                                        </div>
+                                        <div class="mb-1">
+                                            <label class="form-label" for="bsDob">예금주명</label>
+                                            <input type="text" class="form-control picker" name="objname" id="bsDob" required placeholder="홍길동"/>
+                                            <div class="invalid-feedback">예금주명을 입력해주세요.</div>
+                                        </div>
+
+                                        <div class="mb-1">
+                                            <label class="form-label" for="bsDob">입금 금액 (원)</label>
+                                            <input type="number" class="form-control picker" name="objname" id="bsDob" required placeholder="400000"/>
+                                            <div class="invalid-feedback">입금 금액을 입력해주세요.</div>
+                                        </div>
+
+                                        <div class="mb-1">
+                                            <label class="form-label" for="bsDob">입금일 (사건일)</label>
+                                            <input type="date" class="form-control picker" name="objname" id="bsDob" required />
+                                            <div class="invalid-feedback">입금일을 선택해주세요.</div>
+                                        </div>
+
+                                        <div class="mb-1">
+                                            <label class="form-label" for="bsDob">연락처 정보</label>
+                                            <input type="number" class="form-control picker" name="objname" id="bsDob" placeholder="01012345678" />
+
+                                        </div>
+
+                                       
+                                        <div class="mb-1">
+                                            <label class="form-label" class="d-block">성별</label>
+                                            <div class="form-check my-50">
+                                                <input type="radio" id="validationRadio3" name="validationRadioBootstrap" class="form-check-input"  />
+                                                <label class="form-check-label" for="validationRadio3">남자</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="radio" id="validationRadio4" name="validationRadioBootstrap" class="form-check-input"  />
+                                                <label class="form-check-label" for="validationRadio4">여자</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-1">
+                                            <label class="form-label" for="bsDob">거래 지역</label>
+                                            <input type="number" class="form-control picker" name="objname" id="bsDob" placeholder="광주광역시 " />
+                                        </div>
+
+
+                                         
+
+                                        <div class="dropdown-divider"></div>
+
+                                        <div class="card-header">
+                                          <h4 h4 class="card-title">사건 개요 (진술서)</h4>
+                                       </div>
+                                        <div class="mb-1">
+                                            <textarea class="form-control" id="validationBioBootstrap" name="validationBioBootstrap" rows="5" required></textarea>
+                                            <div class="invalid-feedback">진술서을 입력해주세요.</div>
+                                        </div>
+
+                                        <div class="mb-1">
+                                            <label for="customFile1" class="form-label">파일 첨부</label>
+                                            <input class="form-control" type="file" id="customFile1" />
+                                        </div>
+                                        <div class="mb-1">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="validationCheckBootstrap" required />
+                                                <label class="form-check-label" for="validationCheckBootstrap">개인정보 수집 및 이용에 동의합니다 (필수)</label>
+                                                <div class="invalid-feedback">제출하기 전 동의를 누르셔야 합니다.</div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">제출하기</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Bootstrap Validation -->
+              </div>
+        </div>
     </div>
+   
+        </div>
+      </div>
+    </div>
+    <!-- END: Content -->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
 
     <!-- BEGIN: Footer-->
     <footer class="footer footer-static footer-light">
         <div class="dropdown-divider"></div>
-        <p class="clearfix mb-0">
-            
-            <span class="float-md-start d-block d-md-inline-block mt-25"
-            ><div> 피해사례 게시물 내용에 대해 본 사이트는 보증하지 않으며, 게시물의 법적 책임은 피해사례 등록자에게 있습니다.</div>
-            COPYRIGHT &copy; SHADE
-            <span class="d-none d-sm-inline-block"
-                > All rights Reserved</span
-            ></span
-            >
-        </p>
+      <p class="clearfix mb-0">
+        <span class="float-md-start d-block d-md-inline-block mt-25"
+          >
+          
+          <div class="font-center"  >
+          <div> 피해사례 게시물 내용에 대해 본 사이트는 보증하지 않으며, 게시물의 법적 책임은 피해사례 등록자에게 있습니다.</div>
+          COPYRIGHT &copy; SHADE
+          <span class="d-none d-sm-inline-block"
+            > All rights Reserved</span>
+          </span>
+        
+      </p>
     </footer>
-    
+    <button class="btn btn-primary btn-icon scroll-top" type="button">
+      <i data-feather="arrow-up"></i>
+    </button>
     <!-- END: Footer-->
 
     <!-- BEGIN: Vendor JS-->
@@ -350,21 +525,28 @@
 
     <!-- BEGIN: Page Vendor JS-->
     <script src="../../../app-assets/vendors/js/ui/jquery.sticky.js"></script>
+    <script src="../../../app-assets/vendors/js/forms/select/select2.full.min.js"></script>
+    <script src="../../../app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+    <script src="../../../app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
-    <script src="../../../app-assets/js/core/app-menu.min.js"></script>
-    <script src="../../../app-assets/js/core/app.min.js"></script>
-    <script src="../../../app-assets/js/scripts/customizer.min.js"></script>
+    <script src="../../../app-assets/js/core/app-menu.js"></script>
+    <script src="../../../app-assets/js/core/app.js"></script>
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
+        <script src="../../../app-assets/js/scripts/forms/form-validation.js"></script>
+
     <!-- END: Page JS-->
 
     <script>
       $(window).on("load", function () {
         if (feather) {
-          feather.replace({ width: 14, height: 14 });
+          feather.replace({
+            width: 14,
+            height: 14,
+          });
         }
       });
     </script>
