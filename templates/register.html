@@ -18,7 +18,7 @@
       content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app"
     />
     <meta name="author" content="PIXINVENT" />
-    <title> 사기 피해 접수</title>
+    <title> 사기 피해 등록</title>
     <link
       rel="apple-touch-icon"
       href="../../../app-assets/images/ico/apple-icon-120.png"
@@ -106,11 +106,7 @@
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../../assets/css/style.css"
-    />
+    
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
@@ -147,7 +143,8 @@
               class="navbar-brand"
               href="home.html"
               >
-              <h2 class="brand-text mb-0" style="font-size: 30px;">Shade</h2>
+              <h2 class="brand-text mb-0" style="font-size: 30px;">
+                Shade</h2>
             </a>
           </li>
         </ul>
@@ -171,44 +168,16 @@
         </div>
         <ul class="nav navbar-nav align-items-center ms-auto">
           <li class="nav-item dropdown dropdown-user">
-            <a
-              class="nav-link dropdown-toggle dropdown-user-link"
-              id="dropdown-user"
-              href="#"
-              data-bs-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <div class="user-nav d-sm-flex d-none">
-                <span class="user-name fw-bolder">User</span
-                ><span class="user-status">Admin</span>
-              </div>
+                  
               <span class="avatar"
-                ><img
-                  class="round"
-                  src=""
-                  alt="avatar"
-                  height="40"
-                  width="40" />
+                style="margin: 20px 0;">
                   </span>
-            </a>
-            <div
-              class="dropdown-menu dropdown-menu-end"
-              aria-labelledby="dropdown-user"
-            >
-              <a class="dropdown-item" href="#"
-                ><i class="me-50" data-feather="user"></i> Profile</a
-              >
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#"
-                ><i class="me-50" data-feather="settings"></i> Settings</a
-              >
-              <a class="dropdown-item" href="#"
-                ><i class="me-50" data-feather="help-circle"></i> FAQ</a
-              ><a class="dropdown-item" href="#"
-                ><i class="me-50" data-feather="power"></i> Logout</a
-              >
-            </div>
+  
+            <li class="nav-item active">
+              <a class="nav-link d-flex align-items-center">
+                <span style="color: linear-gradient(118deg, #68d168, rgba(153, 240, 103, 0.7)); " > <a href="./Admin.html">로그인</a></span>
+                </a>
+            </li>
           </li>
         </ul>
       </div>
@@ -252,7 +221,7 @@
             <li class="nav-item active">
               <a class="nav-link d-flex align-items-center" href="register.html">
                 <i data-feather="edit"></i>
-                <span data-i18n="Home">사기 피해 접수</span>
+                <span data-i18n="Home">사기 피해 등록</span>
                 </a>
             </li>
 
@@ -286,7 +255,7 @@
           <div class="content-header-left col-md-9 col-12 mb-2">
             <div class="row breadcrumbs-top">
               <div class="col-12">
-                <h2 class="content-header-title float-start mb-0">피해 접수</h2>
+                <h2 class="content-header-title float-start mb-0">피해 등록</h2>
                 <div class="breadcrumb-wrapper">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item">
@@ -310,29 +279,19 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  <i data-feather="grid"></i>
+                  <i data-feather="help-circle"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                   <a class="dropdown-item" href="#"
-                    ><i class="me-1" data-feather="check-square"></i
-                    ><span class="align-middle">Todo</span></a
-                  ><a class="dropdown-item" href="#"
-                    ><i class="me-1" data-feather="message-square"></i
-                    ><span class="align-middle">Chat</span></a
-                  ><a class="dropdown-item" href="#"
-                    ><i class="me-1" data-feather="mail"></i
-                    ><span class="align-middle">Email</span></a
-                  ><a class="dropdown-item" href="#"
-                    ><i class="me-1" data-feather="calendar"></i
-                    ><span class="align-middle">Calendar</span></a
+                    ><i class="me-1" data-feather="help-circle"></i
+                    ><span class="align-middle">본인의 사기피해를 등록하여 타인의 2차피해를 방지하고, 이후 경찰서로 인계될 수 있습니다.</span></a
                   >
+                  
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-
 
 
           <!-- Page layout -->
@@ -350,18 +309,18 @@
                   <div class="col-md-6 col-12">
                             <div class="card" style="padding-top: 30px;">
                                 <div class="card-header">
-                                    <h4 class="card-title">등록자 정보</h4>
+                                    <h4 class="card-title"><strong>등록자 정보</strong></h4>
                                 </div>
                                 <div class="card-body">
-                                    <form class="needs-validation" novalidate>
+                                    <form class="needs-validation" action="/CheckAndInput.html" method="post" novalidate>
                                         <div class="mb-1">
                                             <label class="form-label" for="basic-addon-name">이름</label>
-                                            <input type="text" id="basic-addon-name" class="form-control" placeholder="이름" aria-label="이름" aria-describedby="basic-addon-name" required />
+                                            <input type="text" id="basic-addon-name" class="form-control" placeholder="홍길동" aria-label="이름" aria-describedby="basic-addon-name" required />
                                             <div class="invalid-feedback">이름을 입력해주세요.</div>
                                         </div>
                                         <div class="mb-1">
                                             <label class="form-label" for="basic-default-email1">전화번호</label>
-                                            <input type="email" id="basic-default-email1" class="form-control" placeholder="01012345678" aria-label="01012345678" required />
+                                            <input type="number" id="basic-default-email1" class="form-control" placeholder="01012345678" aria-label="01012345678" required />
                                             <div class="invalid-feedback">전화번호를 입력해주세요.</div>
                                         </div>
                                 
@@ -369,7 +328,7 @@
                                     <div><div class="dropdown-divider"></div></div>
                                 
                                 <div class="card-header">
-                                    <h4 class="card-title">거래 사이트 / 품목 정보</h4>
+                                    <h4 class="card-title"><strong>거래 사이트 / 품목 정보</strong></h4>
                                 </div>
 
                                         <div class="mb-1">
@@ -388,43 +347,49 @@
                                             </select>
                                             <div class="invalid-feedback">거래 유형을 선택해주세요.</div>
                                         </div>
-                                        <div class="mb-1">
-                                            <label class="form-label" for="bsDob">물품명</label>
-                                            <input type="text" class="form-control picker" name="objname" id="bsDob" required />
-                                            <div class="invalid-feedback">물품 이름을 입력해주세요.</div>
-                                        </div>
-                                        <div class="mb-1">
-                                            <label class="form-label" for="bsDob">게시물 링크</label>
-                                            <input type="url" class="form-control picker" name="objname" id="bsDob" placeholder="https://www" />
+
+                                         <div class="mb-1">
+                                            <label class="form-label" for="basic-default-password1">물품명</label>
+                                            <input type="text" id="basic-default-password1" class="form-control" required />
+                                            <div class="invalid-feedback">물품명을 입력해주세요.</div>
                                         </div>
 
-                                                <div class="dropdown-divider"></div>
+                                        <div class="mb-1">
+                                            <label class="form-label" for="basic-default-password1">게시물 링크</label>
+                                            <input type="url" id="basic-default-password1" class="form-control" placeholder="https://www" />
+                                        </div>                                 
+                                        
+                                        <div class="dropdown-divider"></div>
 
                                         <div class="card-header">
-                                          <h4 h4 class="card-title">용의자 정보</h4>
+                                          <h4 h4 class="card-title"><strong>용의자 정보</strong></h4>
                                        </div>
 
                                        <div class="mb-1">
-                                            <label class="form-label" for="bsDob">용의자 아이디</label>
-                                            <input type="text" class="form-control picker" name="id" id="bsDob" required placeholder="shadeprotect"/>
-                                            <div class="invalid-feedback">용의자 아이디를 입력해주세요.</div>
+                                            <label class="form-label" for="basic-default-password1">용의자 아이디</label>
+                                            <input type="text" id="basic-default-password1" class="form-control" required placeholder="shadeprotect"/>
+                                            <div class="invalid-feedback">용의자 아이디을 입력해주세요.</div>
                                         </div>
+
+                                        
                                         <div class="mb-1">
-                                            <label class="form-label" for="bsDob">계좌 번호</label>
-                                            <input type="number" class="form-control picker" name="objname" id="bsDob" required />
-                                            <div class="invalid-feedback">용의자 계좌 번호을 입력해주세요.</div>
+                                            <label class="form-label" for="basic-default-password1">용의자 계좌 번호</label>
+                                            <input type="number" id="basic-default-password1" class="form-control" required/>
+                                            <div class="invalid-feedback">용의자 계좌 번호 입력해주세요.</div>
                                         </div>
+                                       
                                         <div class="mb-1">
-                                            <label class="form-label" for="bsDob">예금주명</label>
-                                            <input type="text" class="form-control picker" name="objname" id="bsDob" required placeholder="홍길동"/>
+                                            <label class="form-label" for="basic-default-password1">예금주명</label>
+                                            <input type="text" id="basic-default-password1" class="form-control" required placeholder="홍길동"/>
                                             <div class="invalid-feedback">예금주명을 입력해주세요.</div>
                                         </div>
 
                                         <div class="mb-1">
-                                            <label class="form-label" for="bsDob">입금 금액 (원)</label>
-                                            <input type="number" class="form-control picker" name="objname" id="bsDob" required placeholder="400000"/>
+                                            <label class="form-label" for="basic-default-password1">입금 금액 (원)</label>
+                                            <input type="number" id="basic-default-password1" class="form-control" required placeholder="1000000"/>
                                             <div class="invalid-feedback">입금 금액을 입력해주세요.</div>
                                         </div>
+
 
                                         <div class="mb-1">
                                             <label class="form-label" for="bsDob">입금일 (사건일)</label>
@@ -432,12 +397,11 @@
                                             <div class="invalid-feedback">입금일을 선택해주세요.</div>
                                         </div>
 
-                                        <div class="mb-1">
-                                            <label class="form-label" for="bsDob">연락처 정보</label>
-                                            <input type="number" class="form-control picker" name="objname" id="bsDob" placeholder="01012345678" />
-
+                                         <div class="mb-1">
+                                            <label class="form-label" for="basic-default-password1">연락처 정보</label>
+                                            <input type="number" id="basic-default-password1" class="form-control"  placeholder="01012345678"/>
                                         </div>
-
+                                        
                                        
                                         <div class="mb-1">
                                             <label class="form-label" class="d-block">성별</label>
@@ -452,17 +416,15 @@
                                         </div>
 
                                         <div class="mb-1">
-                                            <label class="form-label" for="bsDob">거래 지역</label>
-                                            <input type="number" class="form-control picker" name="objname" id="bsDob" placeholder="광주광역시 " />
+                                            <label class="form-label" for="basic-default-password1">거래 지역</label>
+                                            <input type="text" id="basic-default-password1" class="form-control"  placeholder="광주광역시"/>
                                         </div>
 
-
-                                         
-
+                            
                                         <div class="dropdown-divider"></div>
 
                                         <div class="card-header">
-                                          <h4 h4 class="card-title">사건 개요 (진술서)</h4>
+                                          <h4 h4 class="card-title"><strong>사건 개요 (진술서)</strong></h4>
                                        </div>
                                         <div class="mb-1">
                                             <textarea class="form-control" id="validationBioBootstrap" name="validationBioBootstrap" rows="5" required></textarea>
@@ -480,7 +442,7 @@
                                                 <div class="invalid-feedback">제출하기 전 동의를 누르셔야 합니다.</div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">제출하기</button>
+                                        <button id="Register-Btn" type="submit" class="btn btn-primary" >제출하기</button>
                                     </form>
                                 </div>
                             </div>
