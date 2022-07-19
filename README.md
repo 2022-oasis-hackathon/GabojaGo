@@ -3,8 +3,6 @@
 # Project name
 - Shade
 
-
-- 로고 이미지
 ![](https://ifh.cc/g/q2QM69.png)
 
 
