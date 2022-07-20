@@ -1,7 +1,7 @@
 # GabojaGo
 
 # Project name
-- Shade
+- SHADE 
 
 ![](https://ifh.cc/g/q2QM69.png)
 
@@ -11,7 +11,7 @@
 
 
 ## 기능 설명
- - 설명 기입
+ - Safe, HeAlthy, DEal
 
 ## 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
 * ECMAScript 6 지원 브라우저 사용
@@ -24,9 +24,9 @@
  - DB 등 사용한 다른 프로그램 
  
 ### Front-end
- -  react.js, vue.js 등 사용한 front-end 프레임워크 
- -  UI framework
- - 기타 사용한 라이브러리
+ -  html/css/js 
+ -  Bootstrap 5
+ -  AOS ( Animate on scroll library )
 
 
 
