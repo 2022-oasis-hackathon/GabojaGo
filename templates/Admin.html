@@ -363,20 +363,54 @@
                             <a class="dropdown-item" href="#">1년 전</a>
                           </div>
                         </div>
+
                         <!--Bar Chart Start -->
                         <div class="col-xl-6 col-12">
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between align-items-sm-center align-items-start flex-sm-row flex-column">
-                                    
-                                    
                                 </div>
-                                    <div id="chartContainer" style="height: 200px; width: 300px; "></div>
-                                <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-                                <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                                <div style="height: auto; width: 320px;">
+                                  <canvas id="myChart"></canvas>
+                                </div>
+                                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                <script>
+                                  const labels = [
+                                    '1월',
+                                    '2월',
+                                    '3월',
+                                    '4월',
+                                    '5월',
+                                    '6월',
+                                  ];
+
+                                  const data = {
+                                    labels: labels,
+                                    datasets: [{
+                                      label: '피해 사건 수',
+                                      backgroundColor: '#8250df',
+                                      borderColor: '#8250df',
+                                      data: [100, 200, 470, 200, 200, 300, 450],
+                                    }]
+                                  };
+
+                                  const config = {
+                                    type: 'line',
+                                    data: data,
+                                    options: {}
+                                  };
+                                </script>
+
+                                <script>
+                                  const myChart = new Chart(
+                                    document.getElementById('myChart'),
+                                    config
+                                  );
+                                </script>
+                                
                             </div>
                         </div>
                         <!-- Bar Chart End -->
-                        <!-- <div id="avg-sessions-chart"></div> -->
+
                       </div>
                     </div>
                     <hr />

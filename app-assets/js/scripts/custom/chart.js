@@ -1,35 +1,36 @@
-// Bar chart
-window.onload = function () {
-  var dataPoints = [];
+// // Bar chart
+// window.onload = function () {
+//   var dataPoints = [];
 
-  var chart = new CanvasJS.Chart("chartContainer", {
-    animationEnabled: true,
-    theme: "light",
-    title: {
-      text: "피해 등록 현황",
-    },
+//   var chart = new CanvasJS.Chart("chartContainer", {
+//     animationEnabled: true,
+//     theme: "light",
+//     title: {
+//       text: "피해 등록 현황",
+//     },
 
-    data: [
-      {
-        type: "column",
-        yValueFormatString: "#,### 건",
-        dataPoints: dataPoints,
-      },
-    ],
-  });
+//     data: [
+//       {
+//         type: "column",
+//         yValueFormatString: "#,### 건",
+//         dataPoints: dataPoints,
+//       },
+//     ],
+//   });
 
-  function addData(data) {
-    for (var i = 0; i < data.length; i++) {
-      dataPoints.push({
-        x: new Date(data[i].date),
-        y: data[i].units,
-      });
-    }
-    chart.render();
-  }
+//   function addData(data) {
+//     for (var i = 0; i < data.length; i++) {
+//       dataPoints.push({
+//         x: new Date(data[i].date),
+//         y: data[i].units,
+//       });
+//     }
+//     chart.render();
+//   }
 
-  $.getJSON(
-    "https://canvasjs.com/data/gallery/javascript/daily-sales-data.json",
-    addData
-  );
-};
+//   $.getJSON(
+//     'chart.json',
+//     // "https://canvasjs.com/data/gallery/javascript/daily-sales-data.json",
+//     addData
+//   );
+// };
