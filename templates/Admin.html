@@ -130,6 +130,10 @@
 
     </style>
     <!-- END: Custom CSS-->
+
+    <!-- AOS 라이브러리 불러오기-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
   <!-- END: Head-->
 
@@ -316,7 +320,7 @@
             <div class="row match-height">
 
               <!-- Avg Sessions Chart Card starts -->
-              <div class="col-lg-6 col-12">
+              <div class="col-lg-6 col-12" data-aos="fade-down">
                 <div class="card">
                   <div class="card-body">
                     <div class="row pb-50">
@@ -420,14 +424,14 @@
               <!-- Avg Sessions Chart Card ends -->
 
               <!-- Support Tracker Chart Card starts -->
-              <div class="col-lg-6 col-12" >
+              <div class="col-lg-6 col-12" data-aos="fade-down">
                 <div class="card"style="background-color: #68d168;">
                   <div style="padding: 0 10px;">
                     <div class="dropdown chart-dropdown">
                        <!-- List / latest Data -->
             <div class="row">
               <div class="col-12">
-                <div class="card invoice-list-wrapper">
+                <div class="card invoice-list-wrapper" >
                   <div class="card-datatable table-responsive">
                     <div class="mb-1 mb-sm-0" style="background-color: #68d168;">
                        <div class="card-header border-bottom">
@@ -472,7 +476,7 @@
               <!-- Support Tracker Chart Card ends -->
             </div>
 
-            <div class="row match-height">
+            <div class="row match-height" data-aos="fade-down">
               <!-- List / latest Data -->
             <!-- List 용의자 Monitorig -->
                 <section id="multilingual-datatable">
@@ -532,7 +536,7 @@
             </div>
 
             <!-- List 용의자 Monitorig -->
-                <section id="multilingual-datatable">
+                <section id="multilingual-datatable" data-aos="fade-down">
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
@@ -659,6 +663,11 @@
           });
         }
       });
+    </script>
+
+    <!-- AOS 스크립트 시작 -->
+    <script>
+      AOS.init(); // 자바스크립트로 init()을 해야 동작한다.
     </script>
   </body>
   <!-- END: Body-->

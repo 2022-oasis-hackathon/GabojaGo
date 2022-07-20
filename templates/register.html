@@ -312,7 +312,7 @@
                                     <h4 class="card-title"><strong>등록자 정보</strong></h4>
                                 </div>
                                 <div class="card-body">
-                                    <form class="needs-validation" action="/" method="post" novalidate>
+                                    <form class="" action="./registerEnd.html" method="get" novalidate>
                                         <div class="mb-1">
                                             <label class="form-label" for="basic-addon-name">이름</label>
                                             <input type="text" id="register_name" class="form-control" placeholder="홍길동" aria-label="이름" aria-describedby="basic-addon-name" required />
@@ -330,12 +330,20 @@
                                 <div class="card-header">
                                     <h4 class="card-title"><strong>거래 사이트 / 품목 정보</strong></h4>
                                 </div>
-
                                         <div class="mb-1">
-                                            <label class="form-label" for="site_name">사이트명</label>
-                                            <input type="text" id="site_name" class="form-control" placeholder="ex. 중고나라" required />
-                                            <div class="invalid-feedback">사이트명을 입력해주세요.</div>
+                                          <label class="form-label" for="select-transaction">거래 유형</label>
+                                          <select class="form-select" id="select-transaction" required>
+                                            <option value="">사이트 이름을 선택해주세요.</option>
+                                            <option value="중고나라">중고나라</option>
+                                            <option value="번개장터">번개장터</option>
+                                            <option value="네이버 카페">네이버 카페</option>
+                                            <option value="당근마켓">당근마켓</option>
+                                            <option value="기타">기타</option>
+                                          </select>
+                                          <div class="invalid-feedback">거래 유형을 선택해주세요.</div>
                                         </div>
+
+
                                         <div class="mb-1">
                                             <label class="form-label" for="select-transaction">거래 유형</label>
                                             <select class="form-select" id="select-transaction" required>
@@ -406,11 +414,11 @@
                                         <div class="mb-1">
                                             <label class="form-label" class="d-block">성별</label>
                                             <div class="form-check my-50">
-                                                <input type="radio" id="male" name="validationRadioBootstrap" class="form-check-input"  />
+                                                <input type="radio" id="male" name="" class="form-check-input"  />
                                                 <label class="form-check-label" for="male">남자</label>
                                             </div>
                                             <div class="form-check">
-                                                <input type="radio" id="female" name="validationRadioBootstrap" class="form-check-input"  />
+                                                <input type="radio" id="female" name="" class="form-check-input"  />
                                                 <label class="form-check-label" for="female">여자</label>
                                             </div>
                                         </div>
