@@ -117,6 +117,19 @@
     <!-- BEGIN: Custom CSS-->
 
 
+    <!-- AOS 라이브러리 불러오기-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+    <!-- ChatBot -->
+    <script>
+        window.GitpleConfig = { "appCode": "rtBKXYpgZwSGhR0wiEhymsePg14p13" };
+        !function () { function e() { function e() { var e = t.contentDocument, a = e.createElement("script"); a.type = "text/javascript", a.async = !0, a.src = window[n] && window[n].url ? window[n].url + "/inapp-web/gitple-loader.js" : "https://app.gitple.io/inapp-web/gitple-loader.js", a.charset = "UTF-8", e.head && e.head.appendChild(a) } var t = document.getElementById(a); t || ((t = document.createElement("iframe")).id = a, t.style.display = "none", t.style.width = "0", t.style.height = "0", t.addEventListener ? t.addEventListener("load", e, !1) : t.attachEvent ? t.attachEvent("onload", e) : t.onload = e, document.body.appendChild(t)) } var t = window, n = "GitpleConfig", a = "gitple-loader-frame"; if (!window.Gitple) { document; var i = function () { i.ex && i.ex(arguments) }; i.q = [], i.ex = function (e) { i.processApi ? i.processApi.apply(void 0, e) : i.q && i.q.push(e) }, window.Gitple = i, t.attachEvent ? t.attachEvent("onload", e) : t.addEventListener("load", e, !1) } }();
+        Gitple('boot');
+    </script>
+
+
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
@@ -150,7 +163,7 @@
         <ul class="nav navbar-nav">
             <li class="nav-item">
                 <a class="navbar-brand" href="{% url 'headquarters:index' %}">
-                    <h2 class="brand-text mb-0" style="font-size: 30px">Shade</h2>
+                    <h2 class="brand-text mb-0" style="font-size: 30px">SHADE</h2>
                 </a>
             </li>
         </ul>
@@ -206,7 +219,7 @@
                     <span class="avatar"
                     ><img
                             class="round"
-                            src=""
+                            src="../static/images/avatars/user_image.jpg"
                             height="40"
                             width="40"
                     />
@@ -225,7 +238,7 @@
                     >
                     <a class="dropdown-item" href="#"
                     ><i class="me-50" data-feather="help-circle"></i> FAQ</a
-                    ><a class="dropdown-item" href="{% url 'headquarters:index' %}"
+                    ><a class="dropdown-item" href="{% url 'public:index' %}"
                 ><i class="me-50" data-feather="power"></i> Logout</a
                 >
                 </div>
@@ -288,6 +301,7 @@
                     </a>
                 </li>
 
+                
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center">
                         <span data-i18n="Home">용의자 모니터링</span>
@@ -314,83 +328,128 @@
                 <div class="row match-height"></div>
 
                 <div class="row match-height">
-                    <!-- Avg Sessions Chart Card starts -->
-                    <div class="col-lg-6 col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row pb-50">
-                                    <div
-                                            class="col-sm-6 col-12 d-flex justify-content-between flex-column order-sm-1 order-2 mt-1 mt-sm-0"
-                                    >
-                                        <div class="mb-1 mb-sm-0">
-                                            <h2 class="fw-bolder mb-25">날짜별 피해 등록 현황</h2>
-
+                        <!-- Avg Sessions Chart Card starts -->
+                        <div class="col-lg-6 col-12" data-aos="fade-down">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row pb-50">
+                                        <div class="col-sm-6 col-12 d-flex justify-content-between flex-column order-sm-1 order-2 mt-1 mt-sm-0">
+                                            <div class="mb-1 mb-sm-0">
+                                                <h2 class="fw-bolder mb-25">날짜별 피해 등록 현황</h2>
+                                                <!-- <p class="card-text fw-bold mb-2">Avg Sesions</p> -->
+                                                <div class="font-medium-2">지난
+                                                    <span class="text-success me-25">6개월</span>
+                                                    <span>간 데이터</span>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-primary">
+                                                자세히 보기
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-6 col-12 d-flex justify-content-between flex-column text-end order-sm-2 order-1">
+                        
+                        
                                             <!--Bar Chart Start -->
                                             <div class="col-xl-6 col-12">
                                                 <div class="card">
-                                                    <div class="card-header d-flex justify-content-between align-items-sm-center align-items-start flex-sm-row flex-column">
+                                                    <div
+                                                        class="card-header d-flex justify-content-between align-items-sm-center align-items-start flex-sm-row flex-column">
+                                                    </div>
+                                                    <div style="height: auto; width: 320px;">
+                                                        <canvas id="myChart"></canvas>
+                                                    </div>
+                                                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                                    <script>
+                                                        const labels = [
+                                                            '1월',
+                                                            '2월',
+                                                            '3월',
+                                                            '4월',
+                                                            '5월',
+                                                            '6월',
+                                                        ];
 
-                                                        <div class="header-right d-flex align-items-center mt-sm-0 mt-1">
-                                                            <i data-feather="calendar"></i>
-                                                            <input type="date"
-                                                                   class="form-control flat-picker border-0 shadow-none bg-transparent pe-0"
-                                                                   placeholder="YYYY-MM-DD"/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <canvas class="bar-chart-ex chartjs" data-height="400"></canvas>
-                                                    </div>
+                                                        const data = {
+                                                            labels: labels,
+                                                            datasets: [{
+                                                                label: '피해 등록 수',
+                                                                backgroundColor: '#8250df',
+                                                                borderColor: '#8250df',
+                                                                data: [1, 4, 10, 5, 6, 13, 26],
+                                                            }]
+                                                        };
+
+                                                        const config = {
+                                                            type: 'line',
+                                                            data: data,
+                                                            options: {}
+                                                        };
+                                                    </script>
+                        
+                                                    <script>
+                                                        const myChart = new Chart(
+                                                            document.getElementById('myChart'),
+                                                            config
+                                                        );
+                                                    </script>
+                        
                                                 </div>
                                             </div>
                                             <!-- Bar Chart End -->
+                        
                                         </div>
-                                        <button type="button" class="btn btn-primary">
-                                            View Details
-                                        </button>
                                     </div>
-                                    <div
-                                            class="col-sm-6 col-12 d-flex justify-content-between flex-column text-end order-sm-2 order-1"
-                                    >
-                                        <div class="dropdown chart-dropdown">
-
-                                            <div
-                                                    class="dropdown-menu dropdown-menu-end"
-                                                    aria-labelledby="dropdownItem5"
-                                            >
+                                    <hr />
+                                    <div class="row avg-sessions pt-50">
+                        
+                                        <div class="col-6 mb-2">
+                                            <p class="mb-50">사건 검거율 : 77%</p>
+                                            <div class="progress progress-bar-warning" style="height: 6px">
+                                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="60"
+                                                    aria-valuemax="100" style="width: 77%"></div>
                                             </div>
                                         </div>
+                        
+                                        <div class="col-6">
+                                            <p class="mb-50">중고거래 이용률: 37%</p>
+                                            <div class="progress progress-bar-danger" style="height: 6px">
+                                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="70"
+                                                    aria-valuemax="100" style="width: 37%"></div>
+                                            </div>
+                                        </div>
+                        
+                        
                                     </div>
                                 </div>
-                                <hr/>
                             </div>
                         </div>
-                    </div>
-                    <!-- Avg Sessions Chart Card ends -->
+                        <!-- Avg Sessions Chart Card ends -->
 
                     <!-- Support Tracker Chart Card starts -->
-                    <div class="col-lg-6 col-12">
-                        <div class="card">
-                            <div class="card-header d-flex justify-content-between pb-0">
+                    <div class="col-lg-6 col-12" data-aos="fade-down">
+                        <div class="card" style="background-color: #68d168;">
+                            <div style="padding: 0 10px;">
+                            <div class="card-header d-flex justify-content-between pb-0" >
                                 <div class="dropdown chart-dropdown">
                                     <!-- List / latest Data -->
                                     <div class="row">
                                         <div class="col-12">
-                                            <div class="card invoice-list-wrapper">
+                                            <div class="card invoice-list-wrapper" >
                                                 <div class="card-datatable table-responsive">
-                                                    <div class="mb-1 mb-sm-0">
+                                                    <div class="mb-1 mb-sm-0" style="background-color: #68d168;">
                                                         <div class="card-header border-bottom">
-                                                            <h2 class="fw-bolder mb-25" class="card-title">개별 피해 등록
+                                                            <h2 class="fw-bolder mb-25" class="card-title" style="color: white;">개별 피해 등록
                                                                 목록</h2>
                                                         </div>
                                                     </div>
-                                                    <table class="table">
+                                                    <table style="background-color: #F8FFF8;" class="table">
                                                         <thead>
                                                         <tr>
-                                                            <th>일시</th>
-                                                            <th>용의자 이름</th>
-                                                            <th>사이트명</th>
-                                                            <th>거래 유형</th>
-                                                            <th>피해 금액</th>
+                                                            <th style="background-color: #DCF9D7;">일시</th>
+                                                            <th style="background-color: #DCF9D7;">용의자 이름</th>
+                                                            <th style="background-color: #DCF9D7;">사이트명</th>
+                                                            <th style="background-color: #DCF9D7;">거래 유형</th>
+                                                            <th style="background-color: #DCF9D7;">피해 금액</th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
@@ -403,7 +462,7 @@
                                                                         {{ i.site_name }}
                                                                     </td>
                                                                     <td id="trans_way">
-                                                                        계좌이체
+                                                                        {{ i.transaction }}
                                                                     </td>
                                                                     <td id="trans_money">
                                                                         {{ i.trans_money }}원
@@ -421,19 +480,24 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
                     </div>
                     <!-- Support Tracker Chart Card ends -->
                 </div>
 
-                <div class="row match-height">
+                <div class="row match-height" data-aos="fade-down">
                     <!-- List / latest Data -->
                     <!-- List 용의자 Monitorig -->
                     <section id="multilingual-datatable">
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                    <div class="card-header border-bottom">
+                                    <div class="card-header ">
                                         <h2 class="fw-bolder mb-25" class="card-title">최근 검거 조회</h2>
+                                    </div>
+                                    <div class="mb-1" style="padding: 0 20px; ">
+                                        <label style="float: right;  vertical-align: middle;"><input type="text" id="object_name" class="form-control"
+                                                placeholder="단어를 입력하세요." style="width: 150px; " /></label>
                                     </div>
                                     <div class="card-datatable">
                                         <div class="row match-height">
@@ -489,12 +553,25 @@
         </div>
 
         <!-- List 용의자 Monitorig -->
-        <section id="multilingual-datatable">
+        <section id="multilingual-datatable" data-aos="fade-down">
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header border-bottom">
+                        <div class="card-header ">
                             <h2 class="fw-bolder mb-25" class="card-title">용의자 모니터링</h2>
+                        </div>
+                        <!-- Start : Alert Body -->
+                        <div class="alert alert-primary" role="alert"
+                            style="width: 60%; border-radius: 2rem; margin-left: 20px; padding-left: 20px;">
+                            <div class="alert-body">
+                                <strong>처벌 이후</strong>에도 추가적인 신고가 들어온지 <strong>확인 가능</strong> 합니다.
+                            </div>
+                        </div>
+                        <!-- End :Alert Body -->
+
+                        <div class="mb-1" style="padding: 0 20px; ">
+                            <label style="float: right;  vertical-align: middle;"><input type="text" id="object_name" class="form-control"
+                                    placeholder="단어를 입력하세요." style="width: 150px; " /></label>
                         </div>
                         <div class="card-datatable">
                             <div class="row match-height">
@@ -609,6 +686,11 @@
             });
         }
     });
+</script>
+
+<!-- AOS 스크립트 시작 -->
+<script>
+    AOS.init(); 
 </script>
 </body>
 <!-- END: Body-->

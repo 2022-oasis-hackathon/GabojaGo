@@ -79,7 +79,18 @@
 
     <!-- BEGIN: Custom CSS-->
 
-
+    <!-- AOS 라이브러리 불러오기-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Gitple Chat -->
+    <script>
+        window.GitpleConfig = { "appCode": "q4FrYlnEzVEKt2bRgfcfueaala4oz3" };
+        !function () { function e() { function e() { var e = t.contentDocument, a = e.createElement("script"); a.type = "text/javascript", a.async = !0, a.src = window[n] && window[n].url ? window[n].url + "/inapp-web/gitple-loader.js" : "https://app.gitple.io/inapp-web/gitple-loader.js", a.charset = "UTF-8", e.head && e.head.appendChild(a) } var t = document.getElementById(a); t || ((t = document.createElement("iframe")).id = a, t.style.display = "none", t.style.width = "0", t.style.height = "0", t.addEventListener ? t.addEventListener("load", e, !1) : t.attachEvent ? t.attachEvent("onload", e) : t.onload = e, document.body.appendChild(t)) } var t = window, n = "GitpleConfig", a = "gitple-loader-frame"; if (!window.Gitple) { document; var i = function () { i.ex && i.ex(arguments) }; i.q = [], i.ex = function (e) { i.processApi ? i.processApi.apply(void 0, e) : i.q && i.q.push(e) }, window.Gitple = i, t.attachEvent ? t.attachEvent("onload", e) : t.addEventListener("load", e, !1) } }();
+        Gitple('boot');
+    </script>
+    <!-- END Gitple Chat -->
+    
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
@@ -114,7 +125,7 @@
             <li class="nav-item">
                 <a
                         class="navbar-brand"
-                        href="{% url 'public:index %}"
+                        href="{% url 'public:index' %}"
                 >
                     <h2 class="brand-text mb-0" style="font-size: 30px;">Shade</h2>
                 </a>
@@ -318,11 +329,12 @@
                                                                 >용의자 이름(아이디, 닉네임)</a
                                                                 >
                                                             </div>
-                                                            <form method="get" action="/templates/searching.html">
+                                                            <form method="get" action="{% url 'public:search' %}">
                                                                 <input
                                                                         type="text"
                                                                         size="60"
                                                                         class="form-control"
+                                                                        name="keyword"
                                                                         placeholder="용의자 정보를 검색해 보세요."
                                                                 />
                                                             </form>
@@ -365,7 +377,7 @@
                         <div
                                 class="d-flex justify-content-between align-items-end mt-1 pt-25"
                         >
-                            <a href="#">건</a>
+                            <a href="#">{{ tran1 }}건</a>
                         </div>
                     </div>
                 </div>
@@ -381,7 +393,7 @@
                                 class="d-flex justify-content-between align-items-end mt-1 pt-25"
                         >
                         </div>
-                        <a href="#">건</a>
+                        <a href="#">{{ tran2 }}건</a>
                     </div>
                 </div>
             </div>
@@ -395,7 +407,7 @@
                         <div
                                 class="d-flex justify-content-between align-items-end mt-1 pt-25"
                         >
-                            <a href="#">건</a>
+                            <a href="#">{{ tran3 }}건</a>
                         </div>
                     </div>
                 </div>
@@ -410,7 +422,7 @@
                         <div
                                 class="d-flex justify-content-between align-items-end mt-1 pt-25"
                         >
-                            <a href="#">건</a>
+                            <a href="#">{{ tran4 }}건</a>
                         </div>
                     </div>
                 </div>

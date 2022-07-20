@@ -10,7 +10,7 @@
             name="viewport"
             content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui"
     />
-    <title>Shade</title>
+    <title>SHADE</title>
     <link
             rel="apple-touch-icon"
             href="{% static 'images/ico/apple-icon-120.png' %}"
@@ -79,6 +79,17 @@
 
     <!-- BEGIN: Custom CSS-->
 
+    <!-- AOS 라이브러리 불러오기-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Gitple Chat -->
+    <script>
+        window.GitpleConfig = { "appCode": "q4FrYlnEzVEKt2bRgfcfueaala4oz3" };
+        !function () { function e() { function e() { var e = t.contentDocument, a = e.createElement("script"); a.type = "text/javascript", a.async = !0, a.src = window[n] && window[n].url ? window[n].url + "/inapp-web/gitple-loader.js" : "https://app.gitple.io/inapp-web/gitple-loader.js", a.charset = "UTF-8", e.head && e.head.appendChild(a) } var t = document.getElementById(a); t || ((t = document.createElement("iframe")).id = a, t.style.display = "none", t.style.width = "0", t.style.height = "0", t.addEventListener ? t.addEventListener("load", e, !1) : t.attachEvent ? t.attachEvent("onload", e) : t.onload = e, document.body.appendChild(t)) } var t = window, n = "GitpleConfig", a = "gitple-loader-frame"; if (!window.Gitple) { document; var i = function () { i.ex && i.ex(arguments) }; i.q = [], i.ex = function (e) { i.processApi ? i.processApi.apply(void 0, e) : i.q && i.q.push(e) }, window.Gitple = i, t.attachEvent ? t.attachEvent("onload", e) : t.addEventListener("load", e, !1) } }();
+        Gitple('boot');
+    </script>
+    <!-- END Gitple Chat -->
 
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
@@ -90,6 +101,10 @@
 
         .font-center {
             text-align: center;
+        }
+        .lis{
+            font-size: 1.3em; 
+            list-style:none; margin-bottom: 4px;
         }
     </style>
     <!-- END: Custom CSS-->
@@ -116,7 +131,7 @@
                         class="navbar-brand"
                         href="{% url 'public:index' %}"
                 >
-                    <h2 class="brand-text mb-0" style="font-size: 30px;">Shade</h2>
+                    <h2 class="brand-text mb-0" style="font-size: 30px;">SHADE</h2>
                 </a>
             </li>
         </ul>
@@ -339,9 +354,58 @@
 
 
             <!-- Page layout -->
-            <div class="card" id="hidden">
+            <div class="card" id="hidden" style="width: 49%; height: 210px; border: 2px solid #68d168; position:absolute ; right:0; text-align: center;">
+                <div class="card-header" style="display: flex; justify-content : center;">
+                    <h3 style="padding-left: 30px;"> <strong> 사기피해 유형</strong></h3>
+                </div>
+                <div class="card-body">
+                    <div class="card-text" >
+            
+                        <ul>
+                            <li class="lis"> 직거래</li>
+                            <li class="lis">
+                                배송
+                            </li>
+                            <li class="lis">
+                                게임
+                            </li>
+                            <li class="lis">
+                                암호화폐
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--/ Page layout -->
+            
+            
+            <!-- Page layout -->
+            <div class="card" id="hidden" style="width: 49%; height: 210px; border: 2px solid #68d168; text-align: center;">
+                <div class="card-header" style="display: flex; justify-content : center;">
+                    <h3 style="padding-left: 30px;"><strong> 사기 피해 사이트 순위</strong></h3>
+                </div>
+                <div class="card-body">
+                    <div class="card-text">
+            
+                        <ul>
+                            <li class="lis"> 당근마켓</li>
+                            <li class="lis">
+                                네이버 카페
+                            </li>
+                            <li class="lis">
+                                번개장터
+                            </li>
+            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--/ Page layout -->
+            
+            <!-- Page layout -->
+            <div class="card" id="hidden" data-aos="fade-down">
                 <div class="card-header">
-                    <h4 class="card-title"><strong>Shade란?</strong></h4>
+                    <h4 class="card-title"><strong>SHADE란?</strong></h4>
                 </div>
                 <div class="card-body">
                     <div class="card-text">
@@ -357,7 +421,7 @@
                         <!-- Start : Alert Body -->
                         <div class="alert alert-primary" role="alert">
                             <div class="alert-body">
-                                <strong>shade</strong>는 수익성 목적이 아닌 <strong>공익</strong>을 목적으로 합니다 &nbsp;
+                                <strong>SHADE</strong>는 수익성 목적이 아닌 <strong>공익</strong>을 목적으로 합니다 &nbsp;
                             </div>
                         </div>
                         <!-- End :Alert Body -->
@@ -419,6 +483,12 @@
             });
         }
     });
+    
+</script>
+
+<!-- AOS 스크립트 시작 -->
+<script>
+    AOS.init(); 
 </script>
 </body>
 <!-- END: Body-->
