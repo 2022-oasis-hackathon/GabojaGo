@@ -70,28 +70,30 @@ def list(request):
 
 def search(request):
     string = request.GET['keyword']
-    if ScamData.objects.filter(account_name__name=string):
-        data = ScamData.objects.filter(account_name__name=string)
-        tran1 = len(data.filter(transaction='직거래'))
-        tran2 = len(data.filter(transaction='게임/비실물'))
-        tran3 = len(data.filter(transaction='상태/배송'))
-        tran4 = len(data.filter(transaction='암호화폐'))
-        context = {'data': len(data), 'tran1': tran1, 'tran2': tran2, 'tran3': tran3, 'tran4': tran4}
-        return render(request, 'searching.html', context)
-    elif ScamData.objects.filter(trans_phone=int(string)):
-        data = ScamData.objects.filter(trans_phone=string)
-        tran1 = len(data.filter(transaction='직거래'))
-        tran2 = len(data.filter(transaction='게임/비실물'))
-        tran3 = len(data.filter(transaction='상태/배송'))
-        tran4 = len(data.filter(transaction='암호화폐'))
-        context = {'data': len(data), 'tran1': tran1, 'tran2': tran2, 'tran3': tran3, 'tran4': tran4}
-        return render(request, 'searching.html', context)
-    elif ScamData.objects.filter(yong_account=int(string)):
-        data = ScamData.objects.filter(yong_account=int(string))
-        tran1 = len(data.filter(transaction='직거래'))
-        tran2 = len(data.filter(transaction='게임/비실물'))
-        tran3 = len(data.filter(transaction='상태/배송'))
-        tran4 = len(data.filter(transaction='암호화폐'))
-        context = {'data': len(data), 'tran1': tran1, 'tran2': tran2, 'tran3': tran3, 'tran4': tran4}
-        return render(request, 'searching.html', context)
-    return render(request, 'searching.html')
+    try:
+        if ScamData.objects.filter(account_name__name=string):
+            data = ScamData.objects.filter(account_name__name=string)
+            tran1 = len(data.filter(transaction='직거래'))
+            tran2 = len(data.filter(transaction='게임/비실물'))
+            tran3 = len(data.filter(transaction='상태/배송'))
+            tran4 = len(data.filter(transaction='암호화폐'))
+            context = {'data': len(data), 'tran1': tran1, 'tran2': tran2, 'tran3': tran3, 'tran4': tran4}
+            return render(request, 'searching.html', context)
+        elif ScamData.objects.filter(trans_phone=int(string)):
+            data = ScamData.objects.filter(trans_phone=string)
+            tran1 = len(data.filter(transaction='직거래'))
+            tran2 = len(data.filter(transaction='게임/비실물'))
+            tran3 = len(data.filter(transaction='상태/배송'))
+            tran4 = len(data.filter(transaction='암호화폐'))
+            context = {'data': len(data), 'tran1': tran1, 'tran2': tran2, 'tran3': tran3, 'tran4': tran4}
+            return render(request, 'searching.html', context)
+        elif ScamData.objects.filter(yong_account=int(string)):
+            data = ScamData.objects.filter(yong_account=int(string))
+            tran1 = len(data.filter(transaction='직거래'))
+            tran2 = len(data.filter(transaction='게임/비실물'))
+            tran3 = len(data.filter(transaction='상태/배송'))
+            tran4 = len(data.filter(transaction='암호화폐'))
+            context = {'data': len(data), 'tran1': tran1, 'tran2': tran2, 'tran3': tran3, 'tran4': tran4}
+            return render(request, 'searching.html', context)
+    except:
+        return render(request, 'home.html', {'error': '없는 정보입니다.'})
