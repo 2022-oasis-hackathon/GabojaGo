@@ -24,9 +24,9 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2@j0#73ttya_!7$gabmf9=3bx^1ief%er$7megxq$(pk4q*s!+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['lowc.shop']
 
 # Application definition
 
