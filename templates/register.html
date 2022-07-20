@@ -120,6 +120,14 @@
       }
     </style>
     <!-- END: Custom CSS-->
+
+    <!-- Gitple Chat -->
+    <script>
+      window.GitpleConfig = { "appCode": "q4FrYlnEzVEKt2bRgfcfueaala4oz3" };
+      !function () { function e() { function e() { var e = t.contentDocument, a = e.createElement("script"); a.type = "text/javascript", a.async = !0, a.src = window[n] && window[n].url ? window[n].url + "/inapp-web/gitple-loader.js" : "https://app.gitple.io/inapp-web/gitple-loader.js", a.charset = "UTF-8", e.head && e.head.appendChild(a) } var t = document.getElementById(a); t || ((t = document.createElement("iframe")).id = a, t.style.display = "none", t.style.width = "0", t.style.height = "0", t.addEventListener ? t.addEventListener("load", e, !1) : t.attachEvent ? t.attachEvent("onload", e) : t.onload = e, document.body.appendChild(t)) } var t = window, n = "GitpleConfig", a = "gitple-loader-frame"; if (!window.Gitple) { document; var i = function () { i.ex && i.ex(arguments) }; i.q = [], i.ex = function (e) { i.processApi ? i.processApi.apply(void 0, e) : i.q && i.q.push(e) }, window.Gitple = i, t.attachEvent ? t.attachEvent("onload", e) : t.addEventListener("load", e, !1) } }();
+      Gitple('boot');
+    </script>
+    <!-- END Gitple Chat -->
   </head>
   <!-- END: Head-->
 
@@ -320,7 +328,7 @@
                                         </div>
                                         <div class="mb-1">
                                             <label class="form-label" for="basic-default-email1">전화번호</label>
-                                            <input type="number" id="register_phone" class="form-control" placeholder="01012345678" aria-label="01012345678" required />
+                                            <input type="number" id="register_phone" class="form-control" value="010" aria-label="01012345678" required />
                                             <div class="invalid-feedback">전화번호를 입력해주세요.</div>
                                         </div>
                                 
@@ -331,16 +339,17 @@
                                     <h4 class="card-title"><strong>거래 사이트 / 품목 정보</strong></h4>
                                 </div>
                                         <div class="mb-1">
-                                          <label class="form-label" for="select-transaction">거래 유형</label>
-                                          <select class="form-select" id="select-transaction" required>
+                                          <label class="form-label" for="select-transaction">사이트명</label>
+                                          <select class="form-select" id="site" required>
                                             <option value="">사이트 이름을 선택해주세요.</option>
                                             <option value="중고나라">중고나라</option>
                                             <option value="번개장터">번개장터</option>
                                             <option value="네이버 카페">네이버 카페</option>
                                             <option value="당근마켓">당근마켓</option>
-                                            <option value="기타">기타</option>
+                                            <option value="etc">기타</option>
                                           </select>
-                                          <div class="invalid-feedback">거래 유형을 선택해주세요.</div>
+                                          <input type="text" id="siteDirect" name="siteDirect" class="form-control"/>
+                                          <div class="invalid-feedback">사이트명을 선택해주세요.</div>
                                         </div>
 
 
@@ -385,6 +394,12 @@
                                             <input type="number" id="yong_account" class="form-control" required/>
                                             <div class="invalid-feedback">용의자 계좌 번호 입력해주세요.</div>
                                         </div>
+
+                                        <div class="mb-1">
+                                          <label class="form-label" for="bank_name">은행명</label>
+                                          <input type="text" id="bank_name" class="form-control" required placeholder="농협" />
+                                          <div class="invalid-feedback">은행명을 입력해주세요.</div>
+                                        </div>
                                        
                                         <div class="mb-1">
                                             <label class="form-label" for="account_name">예금주명</label>
@@ -401,13 +416,13 @@
 
                                         <div class="mb-1">
                                             <label class="form-label" for="trans_date">입금일 (사건일)</label>
-                                            <input type="date" class="form-control picker" name="objname" id="trans_date" required />
+                                            <input type="date" class="form-control picker" name="objname" id="currentDate" required />
                                             <div class="invalid-feedback">입금일을 선택해주세요.</div>
                                         </div>
 
                                          <div class="mb-1">
                                             <label class="form-label" for="basic-default-password1">연락처 정보</label>
-                                            <input type="number" id="trans_location" class="form-control"  placeholder="01012345678"/>
+                                            <input type="number" id="trans_location" class="form-control"  value="010" />
                                         </div>
                                         
                                        
@@ -519,6 +534,21 @@
           });
         }
       });
+
+      $(function () {
+          //입력박스 숨어있다가
+          $("#siteDirect").hide();
+          $("#site").change(function () {
+            //기타를 선택하면 등장
+            if ($("#site").val() == "etc") {
+              $("#siteDirect").show();
+            } else {
+              $("#siteDirect").hide();
+            }
+          })
+        });
+
+       document.getElementById('currentDate').value = new Date().toISOString().substring(0, 10);;
     </script>
   </body>
   <!-- END: Body-->

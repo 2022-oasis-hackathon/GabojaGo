@@ -100,6 +100,21 @@
       }
     </style>
     <!-- END: Custom CSS-->
+
+    <!-- AOS 라이브러리 불러오기-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+
+
+    <!-- Gitple Chat -->
+    <script>
+      window.GitpleConfig = { "appCode": "q4FrYlnEzVEKt2bRgfcfueaala4oz3" };
+      !function () { function e() { function e() { var e = t.contentDocument, a = e.createElement("script"); a.type = "text/javascript", a.async = !0, a.src = window[n] && window[n].url ? window[n].url + "/inapp-web/gitple-loader.js" : "https://app.gitple.io/inapp-web/gitple-loader.js", a.charset = "UTF-8", e.head && e.head.appendChild(a) } var t = document.getElementById(a); t || ((t = document.createElement("iframe")).id = a, t.style.display = "none", t.style.width = "0", t.style.height = "0", t.addEventListener ? t.addEventListener("load", e, !1) : t.attachEvent ? t.attachEvent("onload", e) : t.onload = e, document.body.appendChild(t)) } var t = window, n = "GitpleConfig", a = "gitple-loader-frame"; if (!window.Gitple) { document; var i = function () { i.ex && i.ex(arguments) }; i.q = [], i.ex = function (e) { i.processApi ? i.processApi.apply(void 0, e) : i.q && i.q.push(e) }, window.Gitple = i, t.attachEvent ? t.attachEvent("onload", e) : t.addEventListener("load", e, !1) } }();
+      Gitple('boot');
+    </script>
+    <!-- END Gitple Chat -->
   </head>
   <!-- END: Head-->
 
@@ -326,7 +341,7 @@
                               type="text"
                               size="60"
                               class="form-control"
-                              placeholder="용의자 정보를 검색해 보세요."
+                              placeholder="사기 이력을 조회할 정보를 입력하세요."
                             />
                             </form>
                           </div>
@@ -344,8 +359,9 @@
     <!-- END: Content-->
        
 
+    <div class="row match-height" style="margin: 0 20px ;">
     <!-- Page layout -->
-                <div class="card" id="hidden" style="width: 45%; height: 200px;" >
+                <div class="card" id="hidden" style="width: 45%; height: 200px; border: 2px solid #68d168; " >
                     <div class="card-header">
                     <h4 class="card-title"><strong>사기피해 유형</strong></h4>
                     </div>
@@ -371,7 +387,7 @@
 
 
           <!-- Page layout -->
-                <div class="card" id="hidden" style="width: 45%; height: 200px; border-color: blueviolet;">
+                <div class="card" id="hidden" style="width: 45%; height: 200px; border: 2px solid #68d168; ">
                     <div class="card-header">
                     <h4 class="card-title"><strong> 사기 피해 사이트 순위</strong></h4>
                     </div>
@@ -392,10 +408,10 @@
                     </div>
                 </div>
           <!--/ Page layout -->
-          
+      </div>
           
           <!-- Page layout -->
-                <div class="card" id="hidden">
+                <div class="card" id="hidden" data-aos="fade-down">
                     <div class="card-header">
                     <h4 class="card-title"><strong>Shade란?</strong></h4>
                     </div>
@@ -475,6 +491,8 @@
           });
         }
       });
+
+      AOS.init(); 
     </script>
   </body>
   <!-- END: Body-->
