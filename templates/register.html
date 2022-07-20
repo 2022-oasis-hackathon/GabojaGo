@@ -143,7 +143,7 @@
             <li class="nav-item">
                 <a
                         class="navbar-brand"
-                        href="home.html"
+                        href="{% url 'public:index' %}"
                 >
                     <h2 class="brand-text mb-0" style="font-size: 30px;">
                         Shade</h2>
@@ -178,7 +178,7 @@
             <li class="nav-item active">
                 <a class="nav-link d-flex align-items-center">
                     <span style="color: linear-gradient(118deg, #68d168, rgba(153, 240, 103, 0.7)); "> <a
-                            href="./Admin.html">로그인</a></span>
+                            href="{% url 'headquarters:index' %}">로그인</a></span>
                 </a>
             </li>
             </li>
@@ -222,21 +222,21 @@
                     data-menu="menu-navigation"
             >
                 <li class="nav-item active">
-                    <a class="nav-link d-flex align-items-center" href="register.html">
+                    <a class="nav-link d-flex align-items-center" href="{% url 'public:post' %}">
                         <i data-feather="edit"></i>
                         <span data-i18n="Home">사기 피해 등록</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center" href="analysis.html">
+                    <a class="nav-link d-flex align-items-center" href="{% url 'public:analysis' %}">
                         <i data-feather="bar-chart-2"></i>
                         <span data-i18n="Home">용의자 분석 정보</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center" href="Personal_List.html">
+                    <a class="nav-link d-flex align-items-center" href="{% url 'public:list' %}">
                         <i data-feather="list"></i>
                         <span data-i18n="Home">개별 피해 목록</span>
                     </a>
@@ -262,7 +262,7 @@
                         <div class="breadcrumb-wrapper">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="home.html">Home</a>
+                                    <a href="{% url 'public:index' %}">Home</a>
                                 </li>
                                 <li class="breadcrumb-item active">Register</li>
                             </ol>

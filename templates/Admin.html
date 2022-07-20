@@ -149,7 +149,7 @@
     <div class="navbar-header d-xl-block d-none">
         <ul class="nav navbar-nav">
             <li class="nav-item">
-                <a class="navbar-brand" href="Admin.html">
+                <a class="navbar-brand" href="{% url 'headquarters:index' %}">
                     <h2 class="brand-text mb-0" style="font-size: 30px">Shade</h2>
                 </a>
             </li>
@@ -225,7 +225,7 @@
                     >
                     <a class="dropdown-item" href="#"
                     ><i class="me-50" data-feather="help-circle"></i> FAQ</a
-                    ><a class="dropdown-item" href="./home.html"
+                    ><a class="dropdown-item" href="{% url 'headquarters:index' %}"
                 ><i class="me-50" data-feather="power"></i> Logout</a
                 >
                 </div>
