@@ -18,9 +18,9 @@
 
 ## 기술 스택 (Technique Used) 
 ### Server(back-end)
- -  nodejs, php, java 등 서버 언어 버전 
- - express, laravel, sptring boot 등 사용한 프레임워크 
- - DB 등 사용한 다른 프로그램 
+ -  Python 
+ -  Django
+ -  MariaDB
  
 ### Front-end
  -  html/css/js 
@@ -29,8 +29,12 @@
 
 
 
-## 프로젝트 사용법 (Getting Started)
-**마크다운 문법을 이용하여 자유롭게 기재**
+## 설치 안내 (Installation Process)
+```bash
+$ git clone https://github.com/2022-oasis-hackathon/Shade.git
+$ python3 manage.py runserver
+$ python manage.py runserver
+```
 
  
 ## 팀 정보 (Team Information)
