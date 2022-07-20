@@ -1,5 +1,3 @@
-# GabojaGo
-
 # Project name
 - SHADE 
 
@@ -36,9 +34,10 @@
 
  
 ## 팀 정보 (Team Information)
-> 기획자 : 박영신
-> 개발자 : 강세이, 박정후
-> 디자이너 : 정가은
+> 가보자고
+>> 기획자 : 박영신
+>> 개발자 : 강세이, 박정후
+>> 디자이너 : 정가은
 
 ## 저작권 및 사용권 정보 (Copyleft / End User License)
  * [MIT](https://github.com/osam2020-WEB/Sample-ProjectName-TeamName/blob/master/license.md)
