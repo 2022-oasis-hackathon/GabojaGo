@@ -342,8 +342,7 @@
                                                     <span>간 데이터</span>
                                                 </div>
                                             </div>
-                                            <button type="button" class="btn btn-primary" onclick="location.href ='https://map.kakao.com/'">
--                                                자세히 보기
+                                            <button type="button" class="btn btn-primary" onclick="onDisplay()">자세히 보기 
                                             </button>
                                         </div>
                                         <div class="col-sm-6 col-12 d-flex justify-content-between flex-column text-end order-sm-2 order-1">
@@ -402,6 +401,8 @@
                                     <div class="row avg-sessions pt-50" >
                                     <hr />
                         
+                                    <div style="margin: 40px 0; text-align: center; display: none;" id="MapDiv" data-aos="fade-down"><iframe src="https://www.google.com/maps/d/u/0/embed?mid=131udnNtUxDU0pF6sXzgm_Mdnv6gtnuc&ehbc=2E312F" width="90%"
+                                            height="420px"></iframe></div>
                                         <div class="col-6 mb-2">
                                             <p class="mb-50">사건 검거율 : 77%</p>
                                             <div class="progress progress-bar-warning" style="height: 6px">
@@ -686,6 +687,10 @@
             });
         }
     });
+
+    function onDisplay(){
+        $('#MapDiv').show();
+    }
 </script>
 
 <!-- AOS 스크립트 시작 -->
