@@ -20,7 +20,7 @@
 ### Server(back-end)
  -  Python 
  -  Django
- -  MariaDB
+ -  MariaDB, nginx, gunicorn
  
 ### Front-end
  -  html/css/js 
