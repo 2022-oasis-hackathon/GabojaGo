@@ -342,8 +342,7 @@
                                                     <span>간 데이터</span>
                                                 </div>
                                             </div>
-                                            <button type="button" class="btn btn-primary">
-                                                자세히 보기
+                                            <button type="button" class="btn btn-primary" onclick="onDisplay()">자세히 보기 
                                             </button>
                                         </div>
                                         <div class="col-sm-6 col-12 d-flex justify-content-between flex-column text-end order-sm-2 order-1">
@@ -399,14 +398,16 @@
                         
                                         </div>
                                     </div>
+                                    <div class="row avg-sessions pt-50" >
                                     <hr />
-                                    <div class="row avg-sessions pt-50">
                         
+                                    <div style="margin: 40px 0; text-align: center; display: none;" id="MapDiv" data-aos="fade-down"><iframe src="https://www.google.com/maps/d/u/0/embed?mid=131udnNtUxDU0pF6sXzgm_Mdnv6gtnuc&ehbc=2E312F" width="90%"
+                                            height="420px"></iframe></div>
                                         <div class="col-6 mb-2">
                                             <p class="mb-50">사건 검거율 : 77%</p>
                                             <div class="progress progress-bar-warning" style="height: 6px">
                                                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="60"
-                                                    aria-valuemax="100" style="width: 77%"></div>
+                                                    aria-valuemax="100" style="width: 77%" data-aos="fade-right"></div>
                                             </div>
                                         </div>
                         
@@ -414,7 +415,7 @@
                                             <p class="mb-50">중고거래 이용률: 37%</p>
                                             <div class="progress progress-bar-danger" style="height: 6px">
                                                 <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="70"
-                                                    aria-valuemax="100" style="width: 37%"></div>
+                                                    aria-valuemax="100" style="width: 37%" data-aos="fade-right"></div>
                                             </div>
                                         </div>
                         
@@ -686,6 +687,10 @@
             });
         }
     });
+
+    function onDisplay(){
+        $('#MapDiv').show();
+    }
 </script>
 
 <!-- AOS 스크립트 시작 -->
