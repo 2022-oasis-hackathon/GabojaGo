@@ -3,7 +3,7 @@
 
 
 ## 프로잭트 소개
-[[![Video Label](http://img.youtube.com/vi/ZGjbrML4wA4/0.jpg)](https://youtu.be/ZGjbrML4wA4)]
+[![Video Label](http://img.youtube.com/vi/ZGjbrML4wA4/0.jpg)](https://youtu.be/ZGjbrML4wA4)
 
 
 ## 기능 설명
