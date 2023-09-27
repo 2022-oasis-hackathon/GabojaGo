@@ -1,12 +1,9 @@
 # Project name
 - SHADE 
 
-![](https://ifh.cc/g/q2QM69.png)
-
 
 ## 프로잭트 소개
-https://lowc.shop/
-![](https://ifh.cc/g/bRrNo9.jpg)
+[[![Video Label](http://img.youtube.com/vi/ZGjbrML4wA4/0.jpg)](https://youtu.be/ZGjbrML4wA4)]
 
 
 ## 기능 설명
